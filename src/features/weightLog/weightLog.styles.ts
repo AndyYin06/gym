@@ -18,6 +18,14 @@ export const styles = StyleSheet.create({
     paddingBottom: 36,
     gap: 20
   },
+  contentWithFab: {
+    padding: 20,
+    paddingBottom: 104,
+    gap: 20
+  },
+  screenWithFab: {
+    flex: 1
+  },
   header: {
     flexDirection: "row",
     alignItems: "center",
@@ -276,6 +284,9 @@ export const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 14
   },
+  historyTextBlock: {
+    flex: 1
+  },
   historyDate: {
     color: "#17211b",
     fontSize: 16,
@@ -318,5 +329,82 @@ export const styles = StyleSheet.create({
   },
   deleteButtonLabel: {
     color: "#a33b2f"
+  },
+  floatingAddButton: {
+    position: "absolute",
+    right: 20,
+    bottom: 22,
+    width: 58,
+    height: 58,
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 29,
+    backgroundColor: "#2f6f73",
+    shadowColor: "#17211b",
+    shadowOffset: { width: 0, height: 6 },
+    shadowOpacity: 0.18,
+    shadowRadius: 10,
+    elevation: 6
+  },
+  floatingAddButtonLabel: {
+    color: "#ffffff",
+    fontSize: 34,
+    fontWeight: "500",
+    lineHeight: 36,
+    marginTop: -2
+  },
+  routineNumberRow: {
+    flexDirection: "row",
+    gap: 10
+  },
+  routineNumberField: {
+    flex: 1
+  },
+  sheetRoot: {
+    flex: 1,
+    justifyContent: "flex-end"
+  },
+  sheetBackdrop: {
+    position: "absolute",
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0,
+    backgroundColor: "#17211b"
+  },
+  sheetBackdropPressable: {
+    flex: 1
+  },
+  sheet: {
+    backgroundColor: "#ffffff",
+    borderTopLeftRadius: 8,
+    borderTopRightRadius: 8,
+    padding: 18,
+    paddingBottom: 28,
+    gap: 14
+  },
+  sheetHandle: {
+    alignSelf: "center",
+    width: 42,
+    height: 4,
+    borderRadius: 2,
+    backgroundColor: "#cfd5cf"
+  },
+  exerciseList: {
+    gap: 10
+  },
+  exerciseOption: {
+    minHeight: 54,
+    justifyContent: "center",
+    borderColor: "#d8ddd4",
+    borderRadius: 8,
+    borderWidth: 1,
+    backgroundColor: "#fbfcf8",
+    paddingHorizontal: 14
+  },
+  exerciseOptionLabel: {
+    color: "#17211b",
+    fontSize: 17,
+    fontWeight: "700"
   }
 });

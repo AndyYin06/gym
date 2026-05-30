@@ -14,7 +14,7 @@ import { WeightTrendChart } from "./components/WeightTrendChart";
 import { styles } from "./weightLog.styles";
 import { useWeightLog } from "./useWeightLog";
 
-const safeAreaEdges = ["top", "right", "bottom", "left"] as const;
+const safeAreaEdges = ["top", "right", "left"] as const;
 
 export function WeightLogScreen() {
   const weightLog = useWeightLog();
