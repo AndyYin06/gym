@@ -4,6 +4,7 @@ import {
   EMPTY_JOURNAL,
   convertWeight,
   formatWeight,
+  getWeightTrendPoints,
   hydrateJournal,
   parseWeightInput,
   sortEntriesNewestFirst,
@@ -68,6 +69,35 @@ describe("weight journal", () => {
     expect(convertWeight(100, "kg", "lb")).toBeCloseTo(220.462, 3);
     expect(convertWeight(220.46226218, "lb", "kg")).toBeCloseTo(100, 3);
     expect(formatWeight(100, "kg", "lb")).toBe("220.5");
+  });
+
+  it("builds trend points chronologically in the preferred unit", () => {
+    const points = getWeightTrendPoints(
+      [
+        {
+          date: "2026-05-29",
+          weight: 180,
+          unit: "lb",
+          createdAt: "now",
+          updatedAt: "now"
+        },
+        {
+          date: "2026-05-27",
+          weight: 80,
+          unit: "kg",
+          createdAt: "now",
+          updatedAt: "now"
+        }
+      ],
+      "lb"
+    );
+
+    expect(points.map((point) => point.date)).toEqual(["2026-05-27", "2026-05-29"]);
+    expect(points[0].displayWeight).toBeCloseTo(176.37, 2);
+    expect(points[1]).toMatchObject({
+      displayWeight: 180,
+      unit: "lb"
+    });
   });
 
   it("rejects invalid weight inputs", () => {

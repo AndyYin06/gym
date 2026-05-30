@@ -24,6 +24,12 @@ export type EntryValidationResult =
   | { valid: true; weight: number }
   | { valid: false; message: string };
 
+export type WeightTrendPoint = {
+  date: string;
+  displayWeight: number;
+  unit: WeightUnit;
+};
+
 export const EMPTY_JOURNAL: WeightJournal = {
   version: 1,
   unitPreference: "lb",
@@ -98,6 +104,19 @@ export function formatWeight(
 
 export function sortEntriesNewestFirst(entries: WeightEntry[]): WeightEntry[] {
   return [...entries].sort((a, b) => b.date.localeCompare(a.date));
+}
+
+export function getWeightTrendPoints(
+  entries: WeightEntry[],
+  displayUnit: WeightUnit
+): WeightTrendPoint[] {
+  return [...entries]
+    .sort((a, b) => a.date.localeCompare(b.date))
+    .map((entry) => ({
+      date: entry.date,
+      displayWeight: convertWeight(entry.weight, entry.unit, displayUnit),
+      unit: displayUnit
+    }));
 }
 
 export function upsertEntry(

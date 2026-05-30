@@ -33,6 +33,8 @@ export function WeightEntryForm({
   onReset,
   onSave
 }: WeightEntryFormProps) {
+  const isDateLocked = Boolean(editingEntry || existingEntry);
+
   return (
     <View style={styles.panel}>
       <View style={styles.panelHeader}>
@@ -45,14 +47,20 @@ export function WeightEntryForm({
       </View>
 
       <Text style={styles.label}>Date</Text>
-      <TextInput
-        autoCapitalize="none"
-        inputMode="numeric"
-        onChangeText={onDateChange}
-        placeholder="YYYY-MM-DD"
-        style={styles.input}
-        value={date}
-      />
+      {isDateLocked ? (
+        <View style={styles.readOnlyField}>
+          <Text style={styles.readOnlyFieldText}>{date}</Text>
+        </View>
+      ) : (
+        <TextInput
+          autoCapitalize="none"
+          inputMode="numeric"
+          onChangeText={onDateChange}
+          placeholder="YYYY-MM-DD"
+          style={styles.input}
+          value={date}
+        />
+      )}
 
       <Text style={styles.label}>Weight</Text>
       <View style={styles.weightRow}>

@@ -10,6 +10,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { WeightEntryForm } from "./components/WeightEntryForm";
 import { WeightHistory } from "./components/WeightHistory";
 import { WeightLogHeader } from "./components/WeightLogHeader";
+import { WeightTrendChart } from "./components/WeightTrendChart";
 import { styles } from "./weightLog.styles";
 import { useWeightLog } from "./useWeightLog";
 
@@ -54,6 +55,11 @@ export function WeightLogScreen() {
             onWeightChange={weightLog.setWeight}
             unit={weightLog.unit}
             weight={weightLog.weight}
+          />
+
+          <WeightTrendChart
+            entries={weightLog.journal.entries}
+            unitPreference={weightLog.journal.unitPreference}
           />
 
           <WeightHistory

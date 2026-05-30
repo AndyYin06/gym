@@ -68,6 +68,20 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 12,
     backgroundColor: "#fbfcf8"
   },
+  readOnlyField: {
+    minHeight: 48,
+    justifyContent: "center",
+    borderColor: "#d8ddd4",
+    borderRadius: 8,
+    borderWidth: 1,
+    paddingHorizontal: 12,
+    backgroundColor: "#f2f4ed"
+  },
+  readOnlyFieldText: {
+    color: "#4f5a53",
+    fontSize: 17,
+    fontWeight: "600"
+  },
   weightRow: {
     flexDirection: "row",
     alignItems: "center",
@@ -136,6 +150,85 @@ export const styles = StyleSheet.create({
   successText: {
     color: "#2f6f50",
     fontSize: 14,
+    fontWeight: "600"
+  },
+  chartSubtitle: {
+    color: "#6d756f",
+    fontSize: 13,
+    fontWeight: "600",
+    marginTop: 2
+  },
+  chartMetric: {
+    alignItems: "flex-end"
+  },
+  chartMetricValue: {
+    color: "#17211b",
+    fontSize: 18,
+    fontWeight: "800"
+  },
+  chartMetricLabel: {
+    color: "#6d756f",
+    fontSize: 12,
+    fontWeight: "600",
+    marginTop: 2
+  },
+  chartScrollContent: {
+    paddingTop: 2
+  },
+  chartCanvas: {
+    position: "relative",
+    overflow: "hidden"
+  },
+  chartGridLine: {
+    position: "absolute",
+    left: 0,
+    right: 0,
+    height: 1,
+    backgroundColor: "#e5e8e0"
+  },
+  chartGridLineTop: {
+    top: 18
+  },
+  chartGridLineMiddle: {
+    top: 76
+  },
+  chartGridLineBottom: {
+    top: 134
+  },
+  chartLineSegment: {
+    position: "absolute",
+    height: 3,
+    borderRadius: 999,
+    backgroundColor: "#2f6f73"
+  },
+  chartDot: {
+    position: "absolute",
+    width: 10,
+    height: 10,
+    borderRadius: 5,
+    backgroundColor: "#2f6f73",
+    borderColor: "#ffffff",
+    borderWidth: 2
+  },
+  chartPointValue: {
+    position: "absolute",
+    width: 52,
+    color: "#17211b",
+    fontSize: 12,
+    fontWeight: "700",
+    textAlign: "center"
+  },
+  chartDateLabel: {
+    position: "absolute",
+    width: 48,
+    color: "#6d756f",
+    fontSize: 12,
+    fontWeight: "600",
+    textAlign: "center"
+  },
+  chartSummaryText: {
+    color: "#4f5a53",
+    fontSize: 13,
     fontWeight: "600"
   },
   historyHeader: {
